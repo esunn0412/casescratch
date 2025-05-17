@@ -47,36 +47,36 @@ export default function Home() {
               <div className="mt-12 flex flex-col sm:flex-row items-center sm:items-start gap-5">
                 <div className="flex -space-x-4">
                   <Image
-                    className="inline-block rounded-full ring-2 ring-slate-100"
-                    src="/users/user-1.png"
+                    className="inline-block size-12 rounded-full ring-2 ring-slate-100"
+                    src="/users/user-1.jpg"
                     alt="user image"
                     width={40}
                     height={40}
                   />
                   <Image
-                    className="inline-block rounded-full ring-2 ring-slate-100"
-                    src="/users/user-2.png"
+                    className="inline-block size-12 rounded-full ring-2 ring-slate-100"
+                    src="/users/user-2.jpeg"
                     alt="user image"
                     width={40}
                     height={40}
                   />
                   <Image
-                    className="inline-block rounded-full ring-2 ring-slate-100"
-                    src="/users/user-3.png"
+                    className="inline-block size-12 rounded-full ring-2 ring-slate-100"
+                    src="/users/user-3.jpeg"
                     alt="user image"
                     width={40}
                     height={40}
                   />
                   <Image
-                    className="inline-block rounded-full ring-2 ring-slate-100"
+                    className="inline-block size-12 rounded-full ring-2 ring-slate-100"
                     src="/users/user-4.jpg"
                     alt="user image"
                     width={40}
                     height={40}
                   />
                   <Image
-                    className="inline-block object-cover rounded-full ring-2 ring-slate-100"
-                    src="/users/user-5.jpg"
+                    className="inline-block size-12 rounded-full ring-2 ring-slate-100"
+                    src="/users/user-5.jpeg"
                     alt="user image"
                     width={40}
                     height={40}
@@ -141,6 +141,81 @@ export default function Home() {
               alt="cat picture"
               className="order-0 lg:order-2"
             />
+          </div>
+
+          <div className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 gap-y-16">
+            <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
+              <div className="flex gap-0.5 mb-2">
+                <Star className="size-5 text-blue-600 fill-blue-600" />
+                <Star className="size-5 text-blue-600 fill-blue-600" />
+                <Star className="size-5 text-blue-600 fill-blue-600" />
+                <Star className="size-5 text-blue-600 fill-blue-600" />
+                <Star className="size-5 text-blue-600 fill-blue-600" />
+              </div>
+              <div className="text-lg leading-8">
+                <p>
+                  &quot;The case is durable and I got so many compliments on it!
+                  Had the case for two and a half months now and the{" "}
+                  <span className="p-0.5 font-semibold underline decoration-blue-400 decoration-2">
+                    picture is super clear
+                  </span>
+                  , the case I had before faded yellow after a couple weeks.
+                  Love it.&quot;
+                </p>
+              </div>
+              <div className="flex gap-4 mt-2">
+                <Image
+                  className="rounded-full object-cover"
+                  src="/users/user-1.jpg"
+                  alt="user image"
+                  width={48}
+                  height={48}
+                />
+                <div className="flex flex-col">
+                  <p className="font-semibold">Lauren</p>
+                  <div className="flex gap-1.5 items-center text-zinc-600">
+                    <Check className="size-4 stroke-[3px] text-blue-600" />
+                    <p className="text-sm">Verified Purchase</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
+              <div className="flex gap-0.5 mb-2">
+                <Star className="size-5 text-blue-600 fill-blue-600" />
+                <Star className="size-5 text-blue-600 fill-blue-600" />
+                <Star className="size-5 text-blue-600 fill-blue-600" />
+                <Star className="size-5 text-blue-600 fill-blue-600" />
+                <Star className="size-5 text-blue-600 fill-blue-600" />
+              </div>
+              <div className="text-lg leading-8">
+                <p>
+                  &quot;I usually keep my phone together with my keys in my
+                  pocket and my last phonecases were pretty scratched up. This
+                  one, besides a barely noticeable scratch on the corner,{" "}
+                  <span className="p-0.5 font-semibold underline decoration-blue-400 decoration-2">
+                    looks brand new even after half a year
+                  </span>
+                  . Thanks for the great case!&quot;
+                </p>
+              </div>
+              <div className="flex gap-4 mt-2">
+                <Image
+                  className="rounded-full object-cover"
+                  src="/users/user-5.jpeg"
+                  alt="user image"
+                  width={48}
+                  height={48}
+                />
+                <div className="flex flex-col">
+                  <p className="font-semibold">Frankie</p>
+                  <div className="flex gap-1.5 items-center text-zinc-600">
+                    <Check className="size-4 stroke-[3px] text-blue-600" />
+                    <p className="text-sm">Verified Purchase</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </MaxwidthWrapper>
       </section>
