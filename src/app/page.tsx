@@ -2,6 +2,7 @@ import MaxwidthWrapper from "@/components/MaxwidthWrapper";
 import { Check, Star } from "lucide-react";
 import Phone from "@/components/Phone";
 import Image from "next/image";
+import { Icons } from "@/components/Icons";
 
 export default function Home() {
   return (
@@ -117,6 +118,29 @@ export default function Home() {
               />
               <Phone className="w-64" imgSrc="/testimonials/1.jpg" />
             </div>
+          </div>
+        </MaxwidthWrapper>
+      </section>
+
+      {/* value proposition section */}
+      <section className="bg-slate-100 py-24">
+        <MaxwidthWrapper className="flex flex-col items-center gap-16 sm:gap-32">
+          <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
+            <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
+              What our
+              <span className="relative px-2">
+                customers
+                <Icons.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-6 text-blue-600" />
+              </span>
+              say
+            </h2>
+            <Image
+              src="/cat-2.png"
+              width={96}
+              height={96}
+              alt="cat picture"
+              className="order-0 lg:order-2"
+            />
           </div>
         </MaxwidthWrapper>
       </section>
