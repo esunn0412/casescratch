@@ -11,7 +11,7 @@ const Navbar = async () => {
   return (
     <nav className="sticky z-[100] h-14 inset-x-0 top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
       <MaxwidthWrapper>
-        <div className="flex h-14 items-center justify-between px-4 border-b border-zinc-200">
+        <div className="flex h-14 items-center justify-between px-0 border-b border-zinc-200">
           <Link href="/" className="flex z-40 font-bold text-black">
             case<span className="text-blue-600 font-bold">scratch</span>
           </Link>
