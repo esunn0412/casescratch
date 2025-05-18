@@ -134,7 +134,7 @@ function ReviewGrid() {
           />
           <ReviewColumn
             reviews={[...column2, ...column3[1]]}
-            className="hidden md:block"
+            // className="hidden md:block"
             reviewClassName={(reviewIndex) =>
               reviewIndex >= column2.length ? "lg:hidden" : ""
             }
@@ -142,7 +142,7 @@ function ReviewGrid() {
           />
           <ReviewColumn
             reviews={column3.flat()}
-            className="hidden md:block"
+            // className="hidden md:block"
             msPerPixel={10}
           />
         </>
