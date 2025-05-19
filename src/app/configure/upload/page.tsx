@@ -5,16 +5,41 @@ import { useState, useTransition } from "react";
 import Dropzone, { FileRejection } from "react-dropzone";
 import { MousePointerSquareDashed, Image, Loader2 } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import { useRouter } from "next/navigation";
+import { useUploadThing } from "@/lib/uploadthing";
+import { toast } from "sonner";
 
 const Page = () => {
   const [isDragOver, setIsDragOver] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
+  const router = useRouter();
 
-  const isLoading = false;
   const [isPending, startTransition] = useTransition();
 
-  const onDropRejected = () => {};
-  const onDropAccepted = () => {};
+  const { startUpload, isUploading } = useUploadThing("imageUploader", {
+    onClientUploadComplete: ([data]) => {
+      const configID = data.serverData.configID;
+      startTransition(() => {
+        router.push(`/configure/design?id=${configID}`);
+      });
+    },
+    onUploadProgress(p) {
+      setUploadProgress(p);
+    },
+  });
+
+  const onDropRejected = (rejectedFiles: FileRejection[]) => {
+    const [file] = rejectedFiles;
+    setIsDragOver(false);
+    toast.error(`${file.file.type} type is not supported`, {
+      description: "Please choose a PNG, JPG, or JPEG image.",
+    });
+  };
+  const onDropAccepted = (acceptedFiles: File[]) => {
+    startUpload(acceptedFiles, { configID: undefined });
+
+    setIsDragOver(false);
+  };
   return (
     <div
       className={cn(
@@ -44,13 +69,13 @@ const Page = () => {
               <input {...getInputProps()} />
               {isDragOver ? (
                 <MousePointerSquareDashed className="size-8 text-zinc-500 mb-2" />
-              ) : isLoading || isPending ? (
+              ) : isUploading || isPending ? (
                 <Loader2 className="animate-spin size-8 text-zinc-500 mb-2" />
               ) : (
                 <Image className="size-8 text-zinc-500 mb-2" />
               )}
               <div className="flex flex-col justify-center mb-2 text-sm text-zinc-700">
-                {isLoading ? (
+                {isUploading ? (
                   <div className="flex flex-col items-center">
                     <p>Uploading...</p>
                     <Progress
