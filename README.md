@@ -47,4 +47,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 **File Upload**
 
-- react-dropzone for file upload on `/configure/upload`
+- [react-dropzone](https://www.npmjs.com/package/react-dropzone) and [Upload Thing](https://docs.uploadthing.com/) for file upload on `/configure/upload`
+- Progress and [Sonner](https://sonner.emilkowal.ski/) components. **Toast now deprecated, instead use Sonner**
