@@ -13,3 +13,11 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Configuration {
+  id String @id @default(cuid()) // collision resistant unique id
+  width Int 
+  height Int 
+  imageUrl String
+  droppedImageUrl String?
+}
