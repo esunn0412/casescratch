@@ -20,7 +20,7 @@ export const ourFileRouter = {
     .onUploadComplete(async ({ metadata, file }) => {
       const { configID } = metadata.input;
 
-      const res = await fetch(file.url); // Fetch the file from the URL
+      const res = await fetch(file.ufsUrl); // Fetch the file from the URL
       const buffer = await res.arrayBuffer(); // image is convered to arrayBuffer
 
       const imgMetadata = await sharp(buffer).metadata();
