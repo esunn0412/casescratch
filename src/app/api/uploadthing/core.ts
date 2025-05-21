@@ -30,7 +30,7 @@ export const ourFileRouter = {
         const configuration = await db.configuration.create({
           data: {
             imageUrl: file.ufsUrl,
-            heigth: height || 500,
+            height: height || 500,
             width: width || 500,
           },
         });
@@ -41,7 +41,7 @@ export const ourFileRouter = {
             id: configID,
           },
           data: {
-            croppedImageUrl: file.ufsUrl,
+            droppedImageUrl: file.ufsUrl,
           },
         });
         return { configID: updatedConfiguration.id };
